@@ -22,7 +22,7 @@ Knowing what actually everything does and what to select and why was very confus
 
 **Visual Progress:**
 ![My Schematics](schematic.png) 
-![My half built PCB](PCB.png) 
+![My half built PCB](pcb.png) 
 
 ### Entry 1: Completing the Planning Module
 * **Time Spent:** 1 and half hour = 1.5 hours
