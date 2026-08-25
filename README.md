@@ -14,10 +14,10 @@
 * **Time Spent:** 7+ hrs
 * **Date:** August 24, 2026
 
-**What I did:*
+**What I did:**
 This is the entry till now I can say I'm very proud of. I called my 2 friends who have great knowledge of 3D Modelling and Electrical things for a night out and we spent the entire night creating the keyboard. And yeahh I did change the Schematic and PCB again from a 60% to a 75% keyboard with more keys and 2 knobs, on their advice. I used a few of the already existing models to help me in the modelling of the case. I am completely done with the PCB and Case. The only things left are BOM and Firmware. I hope everything goes well and I wish you do so too.
 
-**What I got stuck on:*
+**What I got stuck on:**
 Of course, 3D modelling was a new domain for me, so I had to watch quite a few videos, lectures from my friend and Google methods but overall it was quite fun.
 
 **Visual Progress:**
@@ -30,10 +30,10 @@ Of course, 3D modelling was a new domain for me, so I had to watch quite a few v
 * **Time Spent:** 3.5-4hrs
 * **Date:** August 23, 2026
 
-**What I did:*
+**What I did:**
 So I downloaded KiCad first thing in the morning and hopped on reading the docs side by side. But again, since the documents are so vague, I went on YouTube and spent 3 hours learning KiCad. Then I ended up changing my entire keyboard layout plan. (Please provide detailed guides because things got really problematic). But as always in the end everything worked out and I completed the Schematic and got to the PCB and spent some time, but sheer amount of work I had put into the schematic almost made me pass out so I called it a day. 
 
-**What I got stuck on:*
+**What I got stuck on:**
 Knowing what everything actually does and what to select and why was very confusing. Thanks to a YouTube video which helped out as I was on the verge of giving up. 
 
 **Visual Progress:**
