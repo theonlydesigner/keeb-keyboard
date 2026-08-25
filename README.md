@@ -24,7 +24,9 @@ Of course, 3D modelling was a new domain for me, so I had to watch quite a few v
 ![New Schematic](schematic_new.png)
 ![My PCB with Silkscreen](pcb_new_1.png)
 ![Second Image](pcb_new_2.png)
-![3D Case](case.png)
+![3D Case](case_1.png)
+![3D Case](case_2.png)
+![3D Case](case_3.png)
 
 ### Entry 2: Creating Schematics and PCB
 * **Time Spent:** 3.5-4hrs
