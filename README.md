@@ -21,8 +21,6 @@ This is the entry till now I can say I'm very proud of. I called my 2 friends wh
 Of course, 3D modelling was a new domain for me, so I had to watch quite a few videos, lectures from my friend and Google methods but overall it was quite fun.
 
 **Visual Progress:**
-![My Schematics](schematic.png) 
-![My half built PCB](pcb.png)
 ![New Schematic](schematic_new.png)
 ![My PCB with Silkscreen](pcb_new_1.png)
 ![Second Image](pcb_new_2.png)
