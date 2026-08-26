@@ -1,4 +1,4 @@
-# Custom Keyboard Build 
+# KYPS75
 
 ## Project Goals
 * **Target Layout:** 60% Compact
