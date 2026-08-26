@@ -1,11 +1,12 @@
-## Build Journal
-
 ### Entry 4: Completed BOM
 * **Time Spent:** 1 hr
 * **Date:** August 26, 2026
 
 **What I did:**
 I researched all of the components and found the cheapest prices all over and created the BOM list.
+
+**Visual Progress:**
+![BOM List](bom.png)
 
 ### Entry 3: Completed PCB and 3D Case
 * **Time Spent:** 7 hrs 30mins
