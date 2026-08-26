@@ -8,7 +8,7 @@
 I researched all of the components and found the cheapest prices all over and created the BOM list.
 
 ### Entry 3: Completed PCB and 3D Case
-* **Time Spent:** 7+ hrs
+* **Time Spent:** 7 hrs 30mins
 * **Date:** August 24, 2026
 
 **What I did:**
