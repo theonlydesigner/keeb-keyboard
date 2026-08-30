@@ -9,6 +9,15 @@ welcome to the KYPS75 repository. this is a scratch-built 75% mechanical keyboar
 * custom 3D-printed enclosure [designed to barely fit the USB-C port]
 * QMK/VIA compatible [eventually, whenever i finish fighting the firmware]
 
+## Images of my Build
+![layout planning diagram](keyboard-layout.png)
+![dxf](dxf.png)
+![pcb_1](pcb_new_1.png)
+![pcb_2](pcb_new_2.png)
+![schematic](schematic_new.png)
+![case_1](case_1.png)
+![case_2](case_3.png)
+
 ## Bill of Materials (BOM)
 
 | Component | Description / Spec | Quantity | Estimated Cost ($) |
