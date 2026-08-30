@@ -1,0 +1,20 @@
+Parts,Quantity,Purpose,Price,Total Cost(Including Shipping),Links
+PCB,1,Holds components and wires,82,85,https://cart.jlcpcb.com/quote?stencilLayer=2&stencilWidth=130&stencilLength=330&stencilCounts=5&plateType=1&spm=Jlcpcb.Homepage.1010&spm=Jlcpcb.Instantquote.1008&_t=1787658580618&up_spm=Jlcpcb.Loginpage.1003
+Cherry MX Switches,82,Well they press and actually click,33.05,33.05,https://kprepublic.com/products/cherry-mx-hyperglide-switch-black-switch-for-gaming-mechanical-keyboard-60g-5pin-linear-switch-mx1a-11nw-1?variant=44131990175907
+EC11 Rotatory Encoders,2,"Turn to change things, macros",0.97,1.6,https://www.flyrobo.in/ec11-rotary-encoder-with-switch-digital-potentiometer-20mm
+SK6812 LEDs 5050,22,To light the keyboard up,0.87,0.87,https://www.flyrobo.in/5050-red-green-blue-rgb-smd-led?search=SK6812%20LEDs%205050&description=true
+0.91 OLED Display,1,To display graphics and information,2.26,2.26,https://www.flyrobo.in/0.91-inch-128-32-oled-display-module-with-i2c-iic-serial-interface?search=0.91%20OLED%20Display&description=true
+Raspberry Pi Pico ,1,Main microcontroller,7,7,https://jlcpcb.com/parts/componentSearch?searchTxt=Raspberry%20Pi%20Pico
+1N4148 Diodes,85,Organises rows and columns for microcontroller,Included w/ PCB,,https://www.flyrobo.in/1n4148-switching-diode-standard-75v-150ma-through-hole
+USB A Female Connectors,5,Connectors for built in USB-hub,0.31,0.31,https://www.flyrobo.in/usb-female-90-usb-socket?search=USB%20A%20Female%20Connectors&description=true
+Capacitors,7,Required for USB hub circuit,0.1,0.1,https://robu.in/product/grm033r60j104ke19j-murata-electronics-6-3v-100nf-x5r-%c2%b110-0201-multilayer-ceramic-capacitors-mlcc-smd-smt-rohs/
+SL2.1A IC,1,IC used for USB hub,Included w/ PCB,,https://jlcpcb.com/partdetail/CoreChips-SL21A/C6798314
+6.00u Stabilizers,1,Stabilizes the space bar ,21.8,21.8,https://kprepublic.com/products/owlab-stabilizer-v3-pcb-screw-in-stabilizers-for-custom-mechanical-keyboard-kit-2u-6-25u-2x-6-25x-beige-black-pink-purple?variant=43849234383011
+2.00u Stabilizers,4,"Stabilizes both shift keys, enter, and backspace",Included w/ above,,
+75% Keycaps,1 Set,Covers keyswitches,24.15,24.15,https://curiositycaps.in/products/adventurer-1-7mm-thick-pbt-keycaps
+Rotary Encoder Knobs,2,Covers the encoders,0,0,3D print as it is cheaper
+"#8-32 1/2"" Screws",6,Assembles the case and plate,0,0,3D print as it is cheaper
+Micro USB Female Connector,1,Input USB for USB hub,0.03,0.03,https://robu.in/product/micro-usb-type-b-female-5-pin-through-hole-connector/
+"3D Print(Case, Srews, Knobs)",,"Holds the PCB, Keeps the case together, Provides as a knob to rotate Encoders",48,50.8,From JLC3DP
+,,,,,
+,,,Total Cost:,226.97,
