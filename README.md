@@ -39,6 +39,8 @@ welcome to the KYPS75 repository. this is a scratch-built 75% mechanical keyboar
 4. **Case Integration:** Insert the switch/PCB assembly into the 3D-printed bottom housing. Secure it using M2/M3 screws through the mounting tabs.
 5. **Keycaps & Finishing:** Press the keycaps onto the switch stems, install rubber feet at the bottom of the case, and plug in the USB-C cable for testing.
 
+(For reviewers- yeah! the assembly is partly written by AI because I had no idea what put into it. but take note,only partly not fully) 
+
 ## Known Issues
 
 * **Firmware Pending:** Custom firmware layout is still undergoing final keymapping configuration and key matrix debouncing tweaks. [turns out hardware debouncing is a headache]
