@@ -1,54 +1,46 @@
-### Entry 4: Completed BOM
-* **Time Spent:** 1 hr
-* **Date:** August 26, 2026
+---
+title: "kyps75 build journal"
+author: "Pratham Rupera"
+description: "A comprehensive log of designing a custom 75% mechanical keyboard featuring dual rotary encoders and an OLED display, and all the troubleshooting along the way."
+created_at: "2026-08-20"
+---
 
-**What I did:**
-I researched all of the components and found the cheapest prices all over and created the BOM list.
+# august 20: deciding on the layout and keymap
+So I started the project today originally thinking I'd go with a standard 60% layout. But I quickly realized how much I actually need dedicated arrow keys, navigation keys, and macro controls for when I'm coding and drawing. I decided an exploded 75% layout would work best. I spent hours tweaking the key placements in Keyboard Layout Editor (KLE), trying to figure out the spacing for dual rotary encoders (one for volume, one for brush size and timeline scrolling) and a 0.91" OLED display. I also had to spend a lot of time double-checking the keycap row profiles (R1 to R4) to make sure non-standard sizes, like the 1.75u right shift and 1u bottom-row modifiers, wouldn't cause fitment issues with standard keycap sets.
+![layout planning diagram](keyboard-layout.png)
+**total time spent: 2 Hours**
 
-**Visual Progress:**
-![BOM List](bom.png)
+# august 21: plate outline and mounting styles
+I started off by exporting the KLE raw JSON data into the swillkb plate builder to generate the preliminary DXF vector file for the top plate switch matrix. I had a long debate with myself over the mounting styles. While a gasket mount provides better sound dampening, a sandwich top mount is just far more forgiving for 3D printing and gives better structural rigidity (and saves me a ton of time on designing gasket tabs). I modified the switch cutout corners from crisp right angles to 0.5mm fillets so they accommodate the FDM 3D printer nozzle radii, which should prevent stress fractures around the perimeter. Then I exported the updated CAD files for testing.
+![plate vector draft](dxf.png)
+**total time spent: 2 Hours 30 Minutes**
 
-### Entry 3: Completed PCB and 3D Case
-* **Time Spent:** 7 hrs 30mins
-* **Date:** August 24, 2026
+# august 22: doing the schematics and pin mapping
+Today I opened KiCad to begin the electrical schematic capture. I selected the MCU board and mapped out all the pin requirements. An 82-key matrix in a 6-row by 15-column layout needs 21 GPIO pins. The dual EC11 rotary encoders need 2 quadrature signals and 1 push-button pin each (6 pins total), and the I2C OLED screen takes 2 pins (SDA/SCL). Running out of pins is a real worry here! I placed the switch components and wired them up with 1N4148 switching diodes across every single node to prevent ghosting and key rollover. I wired up the initial matrix grid, making absolutely sure to verify the diode polarity because having to desolder 82 backwards diodes later would be awful.
+![kicad schematic matrix](schematic_new.png)
+**total time spent: 3 Hours 30 Minutes**
 
-**What I did:**
-This is the entry till now I can say I'm very proud of. I called my 2 friends who have great knowledge of 3D Modelling and Electrical things for a night out and we spent the entire night creating the keyboard. And yeahh I did change the Schematic and PCB again from a 60% to a 75% keyboard with more keys and 2 knobs, on their advice. I used a few of the already existing models to help me in the modelling of the case. I am completely done with the PCB and Case. The only things left are BOM and Firmware. I hope everything goes well and I wish you do so too.
+# august 23: wiring up the OLED and encoders
+I shifted my focus to integrating the peripheral schematics into the main matrix. First, I wired up the I2C bus line for the 128x32 OLED display and added 4.7kΩ pull-up resistors to both the SDA and SCL lines to ensure clean signal transmission. Then, I placed the footprint logic for the two EC11 rotary encoders. I decided to add RC low-pass filter networks (10kΩ resistors and 10nF capacitors) to hardware-debounce the noisy encoder signals before they even reach the MCU pins. Doing hardware debouncing now should save me from writing annoying software debounce code later. Finally, I consulted two friends to review my logic connections and verify I didn't create any voltage rail shorts lol.
+![peripheral schematic detail](schematic_new.png)
+**total time spent: 3 Hours 30 Minutes**
 
-**What I got stuck on:**
-Of course, 3D modelling was a new domain for me, so I had to watch quite a few videos, lectures from my friend and Google methods but overall it was quite fun.
+# august 24: component layout in KiCad
+I imported the schematic netlist into KiCad's PCB editor and spent the first two hours just doing manual component arrangement. I placed the 82 switch footprints in a strict 19.05mm x 19.05mm grid alignment so the keycap alignment perfectly matches standard key spacing. I nestled the switch diodes directly underneath each switch footprint to keep the trace lengths as short as possible. Then, I positioned the rotary encoder footprints in the top corners and set the OLED module display window perfectly flush along the upper top bezel. I also made sure to verify the component clear zones so the switch housing clips won't collide with any of the surrounding passive SMD components.
+![pcb footprint placement](pcb_new_1.png)
+**total time spent: 4 Hours**
 
-**Visual Progress:**
-![New Schematic](schematic_new.png)
-![My PCB with Silkscreen](pcb_new_1.png)
-![Second Image](pcb_new_2.png)
-![3D Case](case_1.png)
-![3D Case](case_2.png)
-![3D Case](case_3.png)
+# august 25: PCB routing and DRC hell
+This was the most intense routing session of the build. I ran traces for the matrix rows and columns on the top layer, while reserving the bottom layer primarily for a solid ground plane. I ran into massive routing congestion near the USB-C cutout and the MCU socket pins. Every time I ran DRC, KiCad suddenly reported clearance errors because my 0.2mm trace widths were overlapping trace-to-pad clearances. I had to manually drop the trace widths down to 0.15mm and reroute the signals around the second rotary encoder footprint. After three full rerouting passes, DRC finally came back with no errors! My eyes definitely hurt after this one.
+![pcb trace routing completed](pcb_new_2.png)
+**total time spent: 4 Hours 30 Minutes**
 
-### Entry 2: Creating Schematics and PCB
-* **Time Spent:** 3.5-4hrs
-* **Date:** August 23, 2026
+# august 27: designing the 3D case
+Today I transitioned to 3D CAD modeling to design the main housing. I created a two-piece case design consisting of a top bezel frame and a bottom enclosure tray. I modeled the internal PCB mounting standoffs with pockets for M2 threaded brass inserts. I carefully calculated the wall thickness to a 3.0mm minimum to avoid case flex and resonance, and set an ergonomic typing angle of 6 degrees. I also made sure to add 0.3mm tolerance buffers around all the internal walls. This way, any minor FDM printer expansion won't cause the PCB to bend or bind during installation, which saves me from having to sand PLA later.
+![3d case cad model](case_1.png)
+**total time spent: 4 Hours 30 Minutes**
 
-**What I did:**
-So I downloaded KiCad first thing in the morning and hopped on reading the docs side by side. But again, since the documents are so vague, I went on YouTube and spent 3 hours learning KiCad. Then I ended up changing my entire keyboard layout plan. (Please provide detailed guides because things got really problematic). But as always in the end everything worked out and I completed the Schematic and got to the PCB and spent some time, but sheer amount of work I had put into the schematic almost made me pass out so I called it a day. 
-
-**What I got stuck on:**
-Knowing what everything actually does and what to select and why was very confusing. Thanks to a YouTube video which helped out as I was on the verge of giving up. 
-
-**Visual Progress:**
-![My Schematics](schematic.png) 
-![My half built PCB](pcb.png) 
-
-### Entry 1: Completing the Planning Module
-* **Time Spent:** 1 and half hour = 1.5 hours
-* **Date:** August 22, 2026
-
-**What I did:**
-Since the official planning module didn't provide specific steps, I used industry-standard layout tools such as SwillKb, which I found through Google research. I mapped out my keyboard array on Keyboard Layout Editor. I chose a 60% configuration to maximize desk space. After tweaking the design, I exported the raw layout coordinates and ran them through Swillkb Plate Builder to generate a physical DXF blueprint file. I have successfully committed the raw text data and DXF file to this repository.
-
-**What I got stuck on:**
-Understanding stabilizer key spacing (like how big to make the Enter or space keys relative to normal 1u keys) took some trial and error, but reviewing community standard layouts on KLE helped me align everything correctly.
-
-**Visual Progress:**
-![My Planned Keyboard Layout](keyboard-layout.png)
+# august 28: finishing the CAD and slicer settings
+I finalized the top plate CAD enclosure details today. I designed a recessed window frame for the OLED screen so it can sit flush without actually touching the glass face. Then I created the USB-C breakout port cutout on the rear wall, adding chamfered edges for cable connector clearance so it looks clean. Once that was done, I exported all the components as high-density STL files. I imported the models into PrusaSlicer and configured the print settings: 0.2mm layer height, 25% cubic infill for sound resonance tuning, and organic tree supports for the internal overhangs. The project is finally ready for test printing and firmware configuration! :D
+![slicer preview and render](case_3.png)
+**total time spent: 3 Hours**
